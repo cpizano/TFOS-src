@@ -13,6 +13,7 @@ if (is_fuchsia) {
       "//src/calculator",
       "//src/hello_world",
       "//src/rot13",
+      "//src/lab_001",
     ]
     sources = [
       "${target_gen_dir}/src/bouncing_ball/bouncing_ball/bouncing_ball.far",
@@ -21,6 +22,7 @@ if (is_fuchsia) {
       "${target_gen_dir}/src/hello_world/hello_world/hello_world.far",
       "${target_gen_dir}/src/rot13/client/rot13_client/rot13_client.far",
       "${target_gen_dir}/src/rot13/server/rot13_server/rot13_server.far",
+      "${target_gen_dir}/src/lab_001/lab_001/lab_001.far",
     ]
     outputs = [ "${root_out_dir}/{{source_file_part}}" ]
   }
