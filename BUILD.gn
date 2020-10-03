@@ -1,0 +1,61 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Top level BUILD file for gn samples
+
+if (is_fuchsia) {
+  # When building Fuchsia packages, copy all the .far files to the root_out_dir
+  copy("default") {
+    deps = [
+      "//cipd",
+      "//src/bouncing_ball",
+      "//src/calculator",
+      "//src/hello_world",
+      "//src/rot13",
+    ]
+    sources = [
+      "${target_gen_dir}/src/bouncing_ball/bouncing_ball/bouncing_ball.far",
+      "${target_gen_dir}/src/calculator/cli/calculator_cli/calculator_cli.far",
+      "${target_gen_dir}/src/calculator/engine/calculator_engine/calculator_engine.far",
+      "${target_gen_dir}/src/hello_world/hello_world/hello_world.far",
+      "${target_gen_dir}/src/rot13/client/rot13_client/rot13_client.far",
+      "${target_gen_dir}/src/rot13/server/rot13_server/rot13_server.far",
+    ]
+    outputs = [ "${root_out_dir}/{{source_file_part}}" ]
+  }
+} else {
+  group("default") {
+    deps = [ "//src/hello_world" ]
+  }
+}
+
+group("tests") {
+  testonly = true
+  deps = [ "//src/hello_world:tests" ]
+  if (is_fuchsia) {
+    deps += [
+      "//src/calculator:tests",
+      "//src/rot13:tests",
+    ]
+  }
+}
+
+# build all the targets exposed by the Fuchsia sdk.
+if (is_fuchsia) {
+  import("//third_party/fuchsia-sdk/build/test_targets.gni")
+  fuchsia_sdk_test_targets("all_sdk_targets") {
+  }
+}
+
+# A generated file that lists all of the test files.
+generated_file("all_host_tests") {
+  testonly = true
+  deps = [
+    "//:default",
+    "//:tests",
+  ]
+
+  outputs = [ "$root_build_dir/all_host_tests.txt" ]
+  data_keys = [ "host_test_name" ]
+}
