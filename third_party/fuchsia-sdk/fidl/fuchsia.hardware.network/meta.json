@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "fuchsia.net",
+    "zx"
+  ],
+  "name": "fuchsia.hardware.network",
+  "root": "fidl/fuchsia.hardware.network",
+  "sources": [
+    "fidl/fuchsia.hardware.network/device.fidl",
+    "fidl/fuchsia.hardware.network/frames.fidl",
+    "fidl/fuchsia.hardware.network/instance.fidl",
+    "fidl/fuchsia.hardware.network/mac.fidl",
+    "fidl/fuchsia.hardware.network/session.fidl"
+  ],
+  "type": "fidl_library"
+}

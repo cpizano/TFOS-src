@@ -1,0 +1,10 @@
+{
+    "files": [
+        "bin/fssh.sh",
+        "bin/fuchsia-common.sh"
+    ],
+    "name": "fssh",
+    "root": "bin",
+    "target_files": {},
+    "type": "host_tool"
+}

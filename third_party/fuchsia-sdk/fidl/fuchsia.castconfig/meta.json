@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.mem"
+  ],
+  "name": "fuchsia.castconfig",
+  "root": "fidl/fuchsia.castconfig",
+  "sources": [
+    "fidl/fuchsia.castconfig/cast_config.fidl"
+  ],
+  "type": "fidl_library"
+}

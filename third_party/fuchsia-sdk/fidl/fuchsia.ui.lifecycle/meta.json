@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.ui.lifecycle",
+  "root": "fidl/fuchsia.ui.lifecycle",
+  "sources": [
+    "fidl/fuchsia.ui.lifecycle/lifecycle_controller.fidl"
+  ],
+  "type": "fidl_library"
+}

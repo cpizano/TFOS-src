@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "fuchsia.math",
+    "fuchsia.sysmem"
+  ],
+  "name": "fuchsia.camera3",
+  "root": "fidl/fuchsia.camera3",
+  "sources": [
+    "fidl/fuchsia.camera3/device.fidl",
+    "fidl/fuchsia.camera3/device_watcher.fidl",
+    "fidl/fuchsia.camera3/stream.fidl"
+  ],
+  "type": "fidl_library"
+}

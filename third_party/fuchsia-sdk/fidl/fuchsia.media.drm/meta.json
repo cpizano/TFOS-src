@@ -1,0 +1,20 @@
+{
+  "deps": [
+    "fuchsia.io",
+    "fuchsia.media",
+    "fuchsia.mem",
+    "fuchsia.url"
+  ],
+  "name": "fuchsia.media.drm",
+  "root": "fidl/fuchsia.media.drm",
+  "sources": [
+    "fidl/fuchsia.media.drm/content_decryption.fidl",
+    "fidl/fuchsia.media.drm/error.fidl",
+    "fidl/fuchsia.media.drm/license_session.fidl",
+    "fidl/fuchsia.media.drm/properties.fidl",
+    "fidl/fuchsia.media.drm/provisioning.fidl",
+    "fidl/fuchsia.media.drm/services.fidl",
+    "fidl/fuchsia.media.drm/types.fidl"
+  ],
+  "type": "fidl_library"
+}

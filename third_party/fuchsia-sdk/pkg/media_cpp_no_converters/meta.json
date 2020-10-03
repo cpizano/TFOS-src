@@ -1,0 +1,17 @@
+{
+  "banjo_deps": [],
+  "deps": [],
+  "fidl_deps": [],
+  "headers": [
+    "pkg/media_cpp_no_converters/include/lib/media/cpp/timeline_function.h",
+    "pkg/media_cpp_no_converters/include/lib/media/cpp/timeline_rate.h"
+  ],
+  "include_dir": "pkg/media_cpp_no_converters/include",
+  "name": "media_cpp_no_converters",
+  "root": "pkg/media_cpp_no_converters",
+  "sources": [
+    "pkg/media_cpp_no_converters/timeline_function.cc",
+    "pkg/media_cpp_no_converters/timeline_rate.cc"
+  ],
+  "type": "cc_source_library"
+}

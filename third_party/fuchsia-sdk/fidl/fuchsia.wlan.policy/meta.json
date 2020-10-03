@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "fuchsia.wlan.common",
+    "zx"
+  ],
+  "name": "fuchsia.wlan.policy",
+  "root": "fidl/fuchsia.wlan.policy",
+  "sources": [
+    "fidl/fuchsia.wlan.policy/access_point_provider.fidl",
+    "fidl/fuchsia.wlan.policy/client_provider.fidl",
+    "fidl/fuchsia.wlan.policy/types.fidl"
+  ],
+  "type": "fidl_library"
+}

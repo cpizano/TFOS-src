@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "fuchsia.ui.app",
+    "fuchsia.ui.gfx"
+  ],
+  "name": "fuchsia.developer.tiles",
+  "root": "fidl/fuchsia.developer.tiles",
+  "sources": [
+    "fidl/fuchsia.developer.tiles/tiles.fidl"
+  ],
+  "type": "fidl_library"
+}

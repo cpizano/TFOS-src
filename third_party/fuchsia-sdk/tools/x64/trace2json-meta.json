@@ -1,0 +1,9 @@
+{
+  "files": [
+    "tools/x64/trace2json"
+  ],
+  "name": "trace2json",
+  "root": "tools",
+  "target_files": {},
+  "type": "host_tool"
+}

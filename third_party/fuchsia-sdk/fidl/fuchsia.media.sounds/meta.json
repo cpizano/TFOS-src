@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "fuchsia.io",
+    "fuchsia.media",
+    "fuchsia.mem"
+  ],
+  "name": "fuchsia.media.sounds",
+  "root": "fidl/fuchsia.media.sounds",
+  "sources": [
+    "fidl/fuchsia.media.sounds/sound_player.fidl"
+  ],
+  "type": "fidl_library"
+}

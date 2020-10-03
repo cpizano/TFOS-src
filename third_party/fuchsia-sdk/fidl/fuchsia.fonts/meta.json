@@ -1,0 +1,15 @@
+{
+  "deps": [
+    "fuchsia.intl",
+    "fuchsia.mem"
+  ],
+  "name": "fuchsia.fonts",
+  "root": "fidl/fuchsia.fonts",
+  "sources": [
+    "fidl/fuchsia.fonts/events.fidl",
+    "fidl/fuchsia.fonts/font_provider.fidl",
+    "fidl/fuchsia.fonts/provider.fidl",
+    "fidl/fuchsia.fonts/styles.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,10 @@
+{
+  "deps": [],
+  "name": "fuchsia.castsetup",
+  "root": "fidl/fuchsia.castsetup",
+  "sources": [
+    "fidl/fuchsia.castsetup/cast_setup.fidl",
+    "fidl/fuchsia.castsetup/server.fidl"
+  ],
+  "type": "fidl_library"
+}

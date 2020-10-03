@@ -1,0 +1,21 @@
+{
+  "deps": [
+    "fuchsia.mem",
+    "zx"
+  ],
+  "name": "fuchsia.sys",
+  "root": "fidl/fuchsia.sys",
+  "sources": [
+    "fidl/fuchsia.sys/component_controller.fidl",
+    "fidl/fuchsia.sys/environment.fidl",
+    "fidl/fuchsia.sys/environment_controller.fidl",
+    "fidl/fuchsia.sys/flat_namespace.fidl",
+    "fidl/fuchsia.sys/job_provider.fidl",
+    "fidl/fuchsia.sys/launcher.fidl",
+    "fidl/fuchsia.sys/loader.fidl",
+    "fidl/fuchsia.sys/runner.fidl",
+    "fidl/fuchsia.sys/service_provider.fidl",
+    "fidl/fuchsia.sys/types.fidl"
+  ],
+  "type": "fidl_library"
+}

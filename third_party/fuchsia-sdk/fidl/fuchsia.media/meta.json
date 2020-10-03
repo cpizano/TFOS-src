@@ -1,0 +1,29 @@
+{
+  "deps": [
+    "fuchsia.hardware.audio",
+    "fuchsia.images",
+    "fuchsia.media.audio",
+    "fuchsia.sysmem",
+    "zx"
+  ],
+  "name": "fuchsia.media",
+  "root": "fidl/fuchsia.media",
+  "sources": [
+    "fidl/fuchsia.media/activity_reporter.fidl",
+    "fidl/fuchsia.media/audio.fidl",
+    "fidl/fuchsia.media/audio_capturer.fidl",
+    "fidl/fuchsia.media/audio_consumer.fidl",
+    "fidl/fuchsia.media/audio_core.fidl",
+    "fidl/fuchsia.media/audio_device_enumerator.fidl",
+    "fidl/fuchsia.media/audio_renderer.fidl",
+    "fidl/fuchsia.media/metadata.fidl",
+    "fidl/fuchsia.media/profile_provider.fidl",
+    "fidl/fuchsia.media/stream.fidl",
+    "fidl/fuchsia.media/stream_common.fidl",
+    "fidl/fuchsia.media/stream_processor.fidl",
+    "fidl/fuchsia.media/stream_type.fidl",
+    "fidl/fuchsia.media/timeline_function.fidl",
+    "fidl/fuchsia.media/usage_reporter.fidl"
+  ],
+  "type": "fidl_library"
+}

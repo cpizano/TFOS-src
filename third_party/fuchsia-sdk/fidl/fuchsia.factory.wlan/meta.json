@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.factory.wlan",
+  "root": "fidl/fuchsia.factory.wlan",
+  "sources": [
+    "fidl/fuchsia.factory.wlan/iovar.fidl"
+  ],
+  "type": "fidl_library"
+}

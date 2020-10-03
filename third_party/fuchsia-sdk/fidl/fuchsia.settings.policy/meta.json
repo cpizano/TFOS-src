@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "fuchsia.media"
+  ],
+  "name": "fuchsia.settings.policy",
+  "root": "fidl/fuchsia.settings.policy",
+  "sources": [
+    "fidl/fuchsia.settings.policy/error.fidl",
+    "fidl/fuchsia.settings.policy/volume_policy.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "fuchsia.net",
+    "zx"
+  ],
+  "name": "fuchsia.net.mdns",
+  "root": "fidl/fuchsia.net.mdns",
+  "sources": [
+    "fidl/fuchsia.net.mdns/mdns.fidl"
+  ],
+  "type": "fidl_library"
+}

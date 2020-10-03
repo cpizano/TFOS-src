@@ -1,0 +1,24 @@
+{
+  "deps": [
+    "fuchsia.intl",
+    "fuchsia.media",
+    "fuchsia.ui.types"
+  ],
+  "name": "fuchsia.settings",
+  "root": "fidl/fuchsia.settings",
+  "sources": [
+    "fidl/fuchsia.settings/accessibility.fidl",
+    "fidl/fuchsia.settings/audio.fidl",
+    "fidl/fuchsia.settings/device.fidl",
+    "fidl/fuchsia.settings/display.fidl",
+    "fidl/fuchsia.settings/do_not_disturb.fidl",
+    "fidl/fuchsia.settings/input.fidl",
+    "fidl/fuchsia.settings/intl.fidl",
+    "fidl/fuchsia.settings/light.fidl",
+    "fidl/fuchsia.settings/night_mode.fidl",
+    "fidl/fuchsia.settings/privacy.fidl",
+    "fidl/fuchsia.settings/settings.fidl",
+    "fidl/fuchsia.settings/setup.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.io"
+  ],
+  "name": "fuchsia.factory",
+  "root": "fidl/fuchsia.factory",
+  "sources": [
+    "fidl/fuchsia.factory/factory.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,104 @@
+// Copyright 2019 The Fuchsia Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+library fuchsia.hardware.power.statecontrol;
+
+using zx;
+
+/// All available suspend flags.
+// TODO(fxbug.dev/42257): When all clients start using the system power state
+// these flags can be removed.
+const uint32 SUSPEND_FLAG_REBOOT = 0xdcdc0100;
+const uint32 SUSPEND_FLAG_REBOOT_BOOTLOADER = 0xdcdc0101;
+const uint32 SUSPEND_FLAG_REBOOT_RECOVERY = 0xdcdc0102;
+const uint32 SUSPEND_FLAG_POWEROFF = 0xdcdc0200;
+const uint32 SUSPEND_FLAG_MEXEC = 0xdcdc0300;
+const uint32 SUSPEND_FLAG_SUSPEND_RAM = 0xdcdc0400;
+
+// TODO(ravoorir): When the system power states are properly defined,
+// remove the suspend flags. For now, treat each suspend flag as a system
+// power state.
+enum SystemPowerState : uint8 {
+    FULLY_ON = 1;
+    REBOOT = 2;
+    REBOOT_BOOTLOADER = 3;
+    REBOOT_RECOVERY = 4;
+    POWEROFF = 5;
+    MEXEC = 6;
+    SUSPEND_RAM = 7;
+};
+const uint32 MAX_SYSTEM_POWER_STATES = 7;
+
+/// The maxium number of seconds the server will wait for responses from all RebootMethodsWatchers
+/// before changing the system power state.
+// TODO(fxbug.dev/52274): Track how long it takes to persist the reboot reason and adjust this value.
+const uint32 MAX_REBOOT_WATCHER_RESPONSE_TIME_SECONDS = 5;
+
+/// Provides administration services for the device manager service and the device tree it controls.
+[Discoverable]
+protocol Admin {
+    /// Asks the device to enter a fully on state.
+    [Transitional]
+    PowerFullyOn() -> () error zx.status;
+
+    /// Asks the device to reboot.
+    [Transitional]
+    Reboot(RebootReason reason) -> () error zx.status;
+
+    /// Asks the device to reboot into the bootloader.
+    [Transitional]
+    RebootToBootloader() -> () error zx.status;
+
+    /// Asks the device to reboot into the recovery partition.
+    [Transitional]
+    RebootToRecovery() -> () error zx.status;
+
+    /// Asks all devices to enter a powered off state.
+    [Transitional]
+    Poweroff() -> () error zx.status;
+
+    /// Perfroms a kernel mexec.
+    [Transitional]
+    Mexec() -> () error zx.status;
+
+    [Transitional]
+    SuspendToRam() -> () error zx.status;
+};
+
+/// Allows components to register a callback that will be executed when a Reboot method is called.
+/// The main purpose of this protocol is to be able to track reboot reasons. Consider relying on
+/// Component Framework's orderly shutdown if you're looking at using this protocol.
+// Component Framework's orderly shutdown is tracked with bug 51034.
+[Discoverable]
+protocol RebootMethodsWatcherRegister {
+    /// Register a watcher to be notified when a Reboot method is called. The Register channel
+    /// will be used at most once to notify the watcher of an impending reboot and allow it
+    /// the chance to respond.
+    ///
+    /// Watchers can unregister by closing the underlying channel.
+    Register(RebootMethodsWatcher watcher);
+};
+
+/// Allows components to be notified when Reboot related methods are called. Watchers will be given
+/// 'MAX_REBOOT_WATCHER_RESPONSE_TIME_SECONDS' to return before the system power state is changed.
+/// The channel will be used once to send a notification to the watcher. Once the watcher responds
+/// or the timeout expires, the channel will be closed by the client of RebootMethodsWatcher.
+protocol RebootMethodsWatcher {
+    OnReboot(RebootReason reason) -> ();
+};
+
+/// Why the system reboots.
+// If a new value is needed, please add a member of //src/developer/feedback/OWNERs as a reviewer.
+enum RebootReason {
+    USER_REQUEST = 1;
+    SYSTEM_UPDATE = 2;
+    HIGH_TEMPERATURE = 3;
+    FACTORY_DATA_RESET = 6;
+
+    /// Sessionmgr has failed.
+    SESSION_FAILURE = 4;
+
+    /// Some core system component has failed.
+    SYSTEM_FAILURE = 5;
+};

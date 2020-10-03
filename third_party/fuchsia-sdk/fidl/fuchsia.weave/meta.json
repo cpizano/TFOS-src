@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "fuchsia.mem",
+    "fuchsia.net"
+  ],
+  "name": "fuchsia.weave",
+  "root": "fidl/fuchsia.weave",
+  "sources": [
+    "fidl/fuchsia.weave/auth.fidl",
+    "fidl/fuchsia.weave/common.fidl",
+    "fidl/fuchsia.weave/weavestack.fidl"
+  ],
+  "type": "fidl_library"
+}

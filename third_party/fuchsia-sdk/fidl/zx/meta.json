@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "zx",
+  "root": "fidl/zx",
+  "sources": [
+    "fidl/zx/zx_common.fidl"
+  ],
+  "type": "fidl_library"
+}

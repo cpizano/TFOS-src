@@ -1,0 +1,21 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.sysmem",
+  "root": "fidl/fuchsia.sysmem",
+  "sources": [
+    "fidl/fuchsia.sysmem/allocator.fidl",
+    "fidl/fuchsia.sysmem/collection.fidl",
+    "fidl/fuchsia.sysmem/collections_deprecated.fidl",
+    "fidl/fuchsia.sysmem/constraints.fidl",
+    "fidl/fuchsia.sysmem/driver_connector.fidl",
+    "fidl/fuchsia.sysmem/format_modifier.fidl",
+    "fidl/fuchsia.sysmem/formats_deprecated.fidl",
+    "fidl/fuchsia.sysmem/image_formats.fidl",
+    "fidl/fuchsia.sysmem/image_formats_deprecated.fidl",
+    "fidl/fuchsia.sysmem/secure_mem.fidl",
+    "fidl/fuchsia.sysmem/usages.fidl"
+  ],
+  "type": "fidl_library"
+}

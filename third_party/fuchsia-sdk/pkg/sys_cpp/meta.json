@@ -1,0 +1,32 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "fdio",
+    "fit",
+    "sys_service_cpp",
+    "vfs_cpp",
+    "zx"
+  ],
+  "fidl_deps": [
+    "fuchsia.io",
+    "fuchsia.sys"
+  ],
+  "headers": [
+    "pkg/sys_cpp/include/lib/sys/cpp/component_context.h",
+    "pkg/sys_cpp/include/lib/sys/cpp/file_descriptor.h",
+    "pkg/sys_cpp/include/lib/sys/cpp/outgoing_directory.h",
+    "pkg/sys_cpp/include/lib/sys/cpp/service_directory.h",
+    "pkg/sys_cpp/include/lib/sys/cpp/termination_reason.h"
+  ],
+  "include_dir": "pkg/sys_cpp/include",
+  "name": "sys_cpp",
+  "root": "pkg/sys_cpp",
+  "sources": [
+    "pkg/sys_cpp/component_context.cc",
+    "pkg/sys_cpp/file_descriptor.cc",
+    "pkg/sys_cpp/outgoing_directory.cc",
+    "pkg/sys_cpp/service_directory.cc",
+    "pkg/sys_cpp/termination_reason.cc"
+  ],
+  "type": "cc_source_library"
+}

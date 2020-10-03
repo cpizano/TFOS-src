@@ -1,0 +1,10 @@
+{
+  "deps": [],
+  "name": "fuchsia.cobalt",
+  "root": "fidl/fuchsia.cobalt",
+  "sources": [
+    "fidl/fuchsia.cobalt/cobalt.fidl",
+    "fidl/fuchsia.cobalt/cobalt_controller.fidl"
+  ],
+  "type": "fidl_library"
+}

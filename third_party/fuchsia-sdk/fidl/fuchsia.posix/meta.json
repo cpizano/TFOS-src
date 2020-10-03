@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.posix",
+  "root": "fidl/fuchsia.posix",
+  "sources": [
+    "fidl/fuchsia.posix/error.fidl"
+  ],
+  "type": "fidl_library"
+}

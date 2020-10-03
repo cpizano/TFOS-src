@@ -1,0 +1,23 @@
+{
+  "deps": [
+    "fuchsia.input",
+    "fuchsia.ui.input2",
+    "zx"
+  ],
+  "name": "fuchsia.input.report",
+  "root": "fidl/fuchsia.input.report",
+  "sources": [
+    "fidl/fuchsia.input.report/consumer_control.fidl",
+    "fidl/fuchsia.input.report/descriptor.fidl",
+    "fidl/fuchsia.input.report/device.fidl",
+    "fidl/fuchsia.input.report/device_ids.fidl",
+    "fidl/fuchsia.input.report/keyboard.fidl",
+    "fidl/fuchsia.input.report/led.fidl",
+    "fidl/fuchsia.input.report/mouse.fidl",
+    "fidl/fuchsia.input.report/report.fidl",
+    "fidl/fuchsia.input.report/sensor.fidl",
+    "fidl/fuchsia.input.report/touch.fidl",
+    "fidl/fuchsia.input.report/units.fidl"
+  ],
+  "type": "fidl_library"
+}

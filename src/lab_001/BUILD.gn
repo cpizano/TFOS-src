@@ -1,0 +1,30 @@
+
+# default group
+group("lab_001") {
+  deps = [ ":lab_001a_bin" ]
+  if (is_fuchsia) {
+    public_deps = [
+      ":lab_001_package",
+    ]
+  }
+}
+
+# Executable using both a static and shared lib.
+executable("lab_001a_bin") {
+  sources = [ "lab_001a.c" ]
+}
+
+if (is_fuchsia) {
+  import("//third_party/fuchsia-sdk/build/component.gni")
+  import("//third_party/fuchsia-sdk/build/package.gni")
+
+  fuchsia_component("lab_001_cmx") {
+    manifest = "lab_001.cmx"
+    data_deps = [ ":lab_001a_bin" ]
+  }
+
+  fuchsia_package("lab_001_package") {
+    package_name = "lab_001"
+    deps = [ ":lab_001_cmx" ]
+  }
+}

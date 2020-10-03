@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.location"
+  ],
+  "name": "fuchsia.location.position",
+  "root": "fidl/fuchsia.location.position",
+  "sources": [
+    "fidl/fuchsia.location.position/position.fidl"
+  ],
+  "type": "fidl_library"
+}

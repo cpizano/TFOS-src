@@ -1,0 +1,9 @@
+{
+  "files": [
+    "tools/zbi"
+  ],
+  "name": "zbi",
+  "root": "tools",
+  "target_files": {},
+  "type": "host_tool"
+}

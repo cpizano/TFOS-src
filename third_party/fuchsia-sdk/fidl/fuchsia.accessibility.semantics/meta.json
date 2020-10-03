@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "fuchsia.math",
+    "fuchsia.ui.gfx",
+    "fuchsia.ui.views"
+  ],
+  "name": "fuchsia.accessibility.semantics",
+  "root": "fidl/fuchsia.accessibility.semantics",
+  "sources": [
+    "fidl/fuchsia.accessibility.semantics/node.fidl",
+    "fidl/fuchsia.accessibility.semantics/semantics_manager.fidl"
+  ],
+  "type": "fidl_library"
+}

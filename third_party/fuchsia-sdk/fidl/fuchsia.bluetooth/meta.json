@@ -1,0 +1,16 @@
+{
+  "deps": [],
+  "name": "fuchsia.bluetooth",
+  "root": "fidl/fuchsia.bluetooth",
+  "sources": [
+    "fidl/fuchsia.bluetooth/address.fidl",
+    "fidl/fuchsia.bluetooth/appearance.fidl",
+    "fidl/fuchsia.bluetooth/connection_role.fidl",
+    "fidl/fuchsia.bluetooth/device_class.fidl",
+    "fidl/fuchsia.bluetooth/id.fidl",
+    "fidl/fuchsia.bluetooth/nullables.fidl",
+    "fidl/fuchsia.bluetooth/status.fidl",
+    "fidl/fuchsia.bluetooth/uuid.fidl"
+  ],
+  "type": "fidl_library"
+}

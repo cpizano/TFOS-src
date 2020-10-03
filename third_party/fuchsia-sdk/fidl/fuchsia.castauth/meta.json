@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.castauth",
+  "root": "fidl/fuchsia.castauth",
+  "sources": [
+    "fidl/fuchsia.castauth/cast_auth.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.memorypressure",
+  "root": "fidl/fuchsia.memorypressure",
+  "sources": [
+    "fidl/fuchsia.memorypressure/memorypressure.fidl"
+  ],
+  "type": "fidl_library"
+}

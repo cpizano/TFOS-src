@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "fuchsia.hardware.network",
+    "fuchsia.net",
+    "fuchsia.posix.socket"
+  ],
+  "name": "fuchsia.net.interfaces",
+  "root": "fidl/fuchsia.net.interfaces",
+  "sources": [
+    "fidl/fuchsia.net.interfaces/interfaces.fidl"
+  ],
+  "type": "fidl_library"
+}

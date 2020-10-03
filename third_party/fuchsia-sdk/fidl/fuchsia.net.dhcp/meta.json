@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "fuchsia.net",
+    "zx"
+  ],
+  "name": "fuchsia.net.dhcp",
+  "root": "fidl/fuchsia.net.dhcp",
+  "sources": [
+    "fidl/fuchsia.net.dhcp/client.fidl",
+    "fidl/fuchsia.net.dhcp/options.fidl",
+    "fidl/fuchsia.net.dhcp/server.fidl"
+  ],
+  "type": "fidl_library"
+}

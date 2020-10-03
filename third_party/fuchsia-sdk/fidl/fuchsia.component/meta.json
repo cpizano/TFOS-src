@@ -1,0 +1,11 @@
+{
+  "deps": [],
+  "name": "fuchsia.component",
+  "root": "fidl/fuchsia.component",
+  "sources": [
+    "fidl/fuchsia.component/constants.fidl",
+    "fidl/fuchsia.component/error.fidl",
+    "fidl/fuchsia.component/types.fidl"
+  ],
+  "type": "fidl_library"
+}

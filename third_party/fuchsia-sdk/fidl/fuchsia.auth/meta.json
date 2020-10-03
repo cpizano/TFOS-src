@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "fuchsia.ui.views"
+  ],
+  "name": "fuchsia.auth",
+  "root": "fidl/fuchsia.auth",
+  "sources": [
+    "fidl/fuchsia.auth/attestation_signer.fidl",
+    "fidl/fuchsia.auth/auth_provider.fidl",
+    "fidl/fuchsia.auth/common.fidl",
+    "fidl/fuchsia.auth/token_manager.fidl"
+  ],
+  "type": "fidl_library"
+}

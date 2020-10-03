@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.wlan.policy"
+  ],
+  "name": "fuchsia.location.sensor",
+  "root": "fidl/fuchsia.location.sensor",
+  "sources": [
+    "fidl/fuchsia.location.sensor/sensor.fidl"
+  ],
+  "type": "fidl_library"
+}

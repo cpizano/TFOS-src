@@ -1,0 +1,22 @@
+{
+  "deps": [
+    "fuchsia.images",
+    "fuchsia.mem",
+    "fuchsia.scenic.scheduling",
+    "fuchsia.sysmem",
+    "fuchsia.ui.gfx",
+    "fuchsia.ui.input",
+    "fuchsia.ui.views",
+    "zx"
+  ],
+  "name": "fuchsia.ui.scenic",
+  "root": "fidl/fuchsia.ui.scenic",
+  "sources": [
+    "fidl/fuchsia.ui.scenic/commands.fidl",
+    "fidl/fuchsia.ui.scenic/events.fidl",
+    "fidl/fuchsia.ui.scenic/scenic.fidl",
+    "fidl/fuchsia.ui.scenic/session.fidl",
+    "fidl/fuchsia.ui.scenic/snapshot.fidl"
+  ],
+  "type": "fidl_library"
+}

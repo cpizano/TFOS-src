@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.location",
+  "root": "fidl/fuchsia.location",
+  "sources": [
+    "fidl/fuchsia.location/types.fidl"
+  ],
+  "type": "fidl_library"
+}

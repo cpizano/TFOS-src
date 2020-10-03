@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.input",
+  "root": "fidl/fuchsia.input",
+  "sources": [
+    "fidl/fuchsia.input/keys.fidl"
+  ],
+  "type": "fidl_library"
+}

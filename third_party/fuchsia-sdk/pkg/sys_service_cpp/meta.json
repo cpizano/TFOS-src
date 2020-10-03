@@ -1,0 +1,28 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "async-cpp",
+    "fdio",
+    "fidl_cpp",
+    "vfs_cpp",
+    "zx"
+  ],
+  "fidl_deps": [
+    "fuchsia.io"
+  ],
+  "headers": [
+    "pkg/sys_service_cpp/include/lib/sys/service/cpp/service.h",
+    "pkg/sys_service_cpp/include/lib/sys/service/cpp/service_aggregate.h",
+    "pkg/sys_service_cpp/include/lib/sys/service/cpp/service_handler.h",
+    "pkg/sys_service_cpp/include/lib/sys/service/cpp/service_watcher.h"
+  ],
+  "include_dir": "pkg/sys_service_cpp/include",
+  "name": "sys_service_cpp",
+  "root": "pkg/sys_service_cpp",
+  "sources": [
+    "pkg/sys_service_cpp/service.cc",
+    "pkg/sys_service_cpp/service_aggregate.cc",
+    "pkg/sys_service_cpp/service_watcher.cc"
+  ],
+  "type": "cc_source_library"
+}

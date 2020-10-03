@@ -1,0 +1,17 @@
+{
+  "deps": [
+    "fuchsia.math",
+    "fuchsia.media",
+    "fuchsia.media.audio",
+    "fuchsia.ui.views"
+  ],
+  "name": "fuchsia.media.playback",
+  "root": "fidl/fuchsia.media.playback",
+  "sources": [
+    "fidl/fuchsia.media.playback/player.fidl",
+    "fidl/fuchsia.media.playback/problem.fidl",
+    "fidl/fuchsia.media.playback/seeking_reader.fidl",
+    "fidl/fuchsia.media.playback/source_manager.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.hardware.power.statecontrol",
+  "root": "fidl/fuchsia.hardware.power.statecontrol",
+  "sources": [
+    "fidl/fuchsia.hardware.power.statecontrol/admin.fidl"
+  ],
+  "type": "fidl_library"
+}

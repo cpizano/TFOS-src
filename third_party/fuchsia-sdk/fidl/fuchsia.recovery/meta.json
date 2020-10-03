@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.recovery",
+  "root": "fidl/fuchsia.recovery",
+  "sources": [
+    "fidl/fuchsia.recovery/factory_reset.fidl"
+  ],
+  "type": "fidl_library"
+}

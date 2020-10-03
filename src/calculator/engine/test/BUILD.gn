@@ -1,0 +1,40 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//build/testing.gni")
+
+# All tests.
+group("test") {
+  testonly = true
+
+  deps = [
+    ":engine_host_unit_test",
+  ]
+}
+
+# An executable containing unit tests that can be run on the development host.
+test("engine_host_unit_test") {
+  sources = [
+    "engine_host_unit_test.cc",
+  ]
+
+  deps = [
+    "//src/calculator/engine:lib",
+    "//third_party/googletest:gtest_main",
+  ]
+}
+
+# An executable containing test cases that can be run on a Fuchsia device.
+executable("engine_device_unit_test_bin") {
+  testonly = true
+
+  sources = [
+    "engine_device_unit_test.cc",
+  ]
+
+  deps = [
+    "//src/calculator/engine:driver",
+    "//third_party/googletest:gtest_main",
+  ]
+}

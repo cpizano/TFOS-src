@@ -1,0 +1,22 @@
+{
+  "deps": [
+    "fuchsia.io",
+    "fuchsia.media.sessions2",
+    "fuchsia.mem",
+    "fuchsia.net.http",
+    "fuchsia.ui.gfx",
+    "fuchsia.ui.views"
+  ],
+  "name": "fuchsia.web",
+  "root": "fidl/fuchsia.web",
+  "sources": [
+    "fidl/fuchsia.web/constants.fidl",
+    "fidl/fuchsia.web/context.fidl",
+    "fidl/fuchsia.web/cookie.fidl",
+    "fidl/fuchsia.web/debug.fidl",
+    "fidl/fuchsia.web/frame.fidl",
+    "fidl/fuchsia.web/navigation.fidl",
+    "fidl/fuchsia.web/url_request_rewrite_rules.fidl"
+  ],
+  "type": "fidl_library"
+}

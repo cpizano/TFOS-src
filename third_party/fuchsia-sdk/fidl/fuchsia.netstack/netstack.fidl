@@ -1,0 +1,184 @@
+// Copyright 2013 The Fuchsia Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+library fuchsia.netstack;
+
+using fuchsia.hardware.ethernet;
+using fuchsia.net.dhcp;
+using fuchsia.net;
+using fuchsia.posix.socket;
+using zx;
+
+enum Protocol {
+    UNSPECIFIED = 0;
+    UDP = 1;
+    TCP = 2;
+};
+
+enum Status {
+    OK = 0;
+    UNKNOWN_ERROR = 1;
+    DNS_ERROR = 2;
+    PARSE_ERROR = 3;
+    IPV4_ONLY = 4;
+    UNKNOWN_INTERFACE = 5;
+};
+
+struct NetErr {
+    Status status;
+    string:MAX message;
+};
+
+struct InterfaceConfig {
+    fuchsia.posix.socket.interface_name name;
+
+    /// An unstable file path corresponding to the interface. Used in watching the creation
+    /// and destruction of the interface, or in accessing the interface using netdump.
+    string:MAX filepath;
+
+    uint32 metric;
+};
+
+/// Flags describe an interface's runtime configuration.
+bits Flags : uint32 {
+    /// Set if the interface is up.
+    UP = 0x01;
+    // Set if DHCP is enabled on the interface.
+    DHCP = 0x02;
+};
+
+/// https://linux.die.net/man/7/netdevice
+struct NetInterface {
+    uint32 id;
+    Flags flags;
+    fuchsia.hardware.ethernet.Features features;
+    uint32 configuration;
+    fuchsia.posix.socket.interface_name name;
+    /// addr is one of the interface's IPv4 addresses, even if the interface
+    /// holds multiple. No guarantees are made about which address is used when
+    /// an interface has multiple IPv4 addresses.
+    ///
+    /// If the interface does not have an IPv4 address, addr is the unspecified
+    /// IPv4 address (0.0.0.0).
+    fuchsia.net.IpAddress addr;
+    /// netmask is addr's corresponding network mask.
+    ///
+    /// If the interface does not have an IPv4 address, netmask is the 0 netmask
+    /// (0.0.0.0).
+    fuchsia.net.IpAddress netmask;
+    /// netmask is addr's corresponding network's broadcast address.
+    ///
+    /// If the interface does not have an IPv4 address, broadaddr is the
+    /// unspecified IPv4 address (0.0.0.0).
+    fuchsia.net.IpAddress broadaddr;
+    vector<fuchsia.net.Subnet>:MAX ipv6addrs;
+    bytes hwaddr;
+};
+
+/// New version that includes a metric value.
+// TODO(fxbug.dev/21079): Move this to NetInterface once Chromium stops using
+// netstack.fidl.
+struct NetInterface2 {
+    uint32 id;
+    Flags flags;
+    fuchsia.hardware.ethernet.Features features;
+    uint32 configuration;
+    uint32 metric;
+    fuchsia.posix.socket.interface_name name;
+    /// addr is one of the interface's IPv4 addresses, even if the interface
+    /// holds multiple. No guarantees are made about which address is used when
+    /// an interface has multiple IPv4 addresses.
+    ///
+    /// If the interface does not have an IPv4 address, addr is the unspecified
+    /// IPv4 address (0.0.0.0).
+    fuchsia.net.IpAddress addr;
+    /// netmask is addr's corresponding network mask.
+    ///
+    /// If the interface does not have an IPv4 address, netmask is the 0 netmask
+    /// (0.0.0.0).
+    fuchsia.net.IpAddress netmask;
+    /// netmask is addr's corresponding network's broadcast address.
+    ///
+    /// If the interface does not have an IPv4 address, broadaddr is the
+    /// unspecified IPv4 address (0.0.0.0).
+    fuchsia.net.IpAddress broadaddr;
+    vector<fuchsia.net.Subnet>:MAX ipv6addrs;
+    bytes hwaddr;
+};
+
+struct RouteTableEntry {
+    fuchsia.net.IpAddress destination;
+    fuchsia.net.IpAddress netmask;
+    fuchsia.net.IpAddress gateway;
+    uint32 nicid;
+};
+
+/// New version that includes a metric value.
+// TODO(fxbug.dev/21079): Move this to NetInterface once Chromium stops using
+// netstack.fidl.
+struct RouteTableEntry2 {
+    fuchsia.net.IpAddress destination;
+    fuchsia.net.IpAddress netmask;
+    fuchsia.net.IpAddress? gateway;
+    uint32 nicid;
+    uint32 metric;
+};
+
+struct SocketAddress {
+    fuchsia.net.IpAddress addr;
+    uint16 port;
+};
+
+[Discoverable]
+protocol Netstack {
+    /// Returns the list of registered network interfaces.
+    GetInterfaces() -> (vector<NetInterface>:MAX interfaces);
+    GetInterfaces2() -> (vector<NetInterface2>:MAX interfaces);
+
+    /// Returns current route table.
+    GetRouteTable() -> (vector<RouteTableEntry>:MAX rt);
+    GetRouteTable2() -> (vector<RouteTableEntry2>:MAX rt);
+
+    /// Sets the status (up or down) for the interface with the given nicid.
+    SetInterfaceStatus(uint32 nicid, bool enabled);
+
+    /// Sets the address for the interface with the given nicid.
+    /// Masks off addr.PrefixLen bits from addr.Addr to set the subnet.
+    SetInterfaceAddress(uint32 nicid, fuchsia.net.IpAddress addr, uint8 prefix_len) -> (NetErr result);
+
+    /// Removes the address for the interface with the given nicid.
+    /// Masks off addr.PrefixLen bits from addr.Addr to set the subnet.
+    RemoveInterfaceAddress(uint32 nicid, fuchsia.net.IpAddress addr, uint8 prefix_len) -> (NetErr result);
+
+    /// Sets the route metric for the interface with the given nicid.
+    SetInterfaceMetric(uint32 nicid, uint32 metric) -> (NetErr result);
+
+    /// Creates a bridge and returns the newly created nicid or an
+    /// error if the creation fails.
+    BridgeInterfaces(vector<uint32>:MAX nicids) -> (NetErr result, uint32 nicid);
+
+    /// Adds a new interface backed by the given ethernet device.
+    AddEthernetDevice(string:MAX topological_path, InterfaceConfig interface_config, fuchsia.hardware.ethernet.Device device) -> (uint32 nicid) error zx.status;
+
+    // TODO(stijlist): re-home this protocol. GetDhcpClient should be a member
+    // of the protocol that eventually owns network interface management
+    // in general.
+    GetDhcpClient(uint32 nicid, request<fuchsia.net.dhcp.Client> client) -> () error zx.status;
+
+    /// Begin a route transaction for atomically getting and setting the route
+    /// table.  Returns true if a transaction can be started.
+    StartRouteTableTransaction(request<RouteTableTransaction> route_table_transaction) -> (zx.status status);
+
+    /// Emitted when an interface is added or removed, or when an interface's properties changed.
+    ///
+    /// Synthetically emitted when the protocol request is bound.
+    [Deprecated = "Deprecated in favor of fuchsia.net.interfaces/State.GetListWatcher and GetPropertiesWatcher"]
+    -> OnInterfacesChanged(vector<NetInterface>:MAX interfaces);
+};
+
+[Discoverable]
+protocol RouteTableTransaction {
+    AddRoute(RouteTableEntry2 r) -> (zx.status status);
+    DelRoute(RouteTableEntry2 r) -> (zx.status status);
+};

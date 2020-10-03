@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.recovery.ui",
+  "root": "fidl/fuchsia.recovery.ui",
+  "sources": [
+    "fidl/fuchsia.recovery.ui/countdown.fidl"
+  ],
+  "type": "fidl_library"
+}

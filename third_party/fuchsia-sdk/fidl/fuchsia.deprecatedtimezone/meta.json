@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.deprecatedtimezone",
+  "root": "fidl/fuchsia.deprecatedtimezone",
+  "sources": [
+    "fidl/fuchsia.deprecatedtimezone/deprecated_time_zone.fidl"
+  ],
+  "type": "fidl_library"
+}

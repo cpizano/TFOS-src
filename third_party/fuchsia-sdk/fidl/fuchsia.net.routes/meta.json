@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "fuchsia.net",
+    "zx"
+  ],
+  "name": "fuchsia.net.routes",
+  "root": "fidl/fuchsia.net.routes",
+  "sources": [
+    "fidl/fuchsia.net.routes/routes.fidl"
+  ],
+  "type": "fidl_library"
+}

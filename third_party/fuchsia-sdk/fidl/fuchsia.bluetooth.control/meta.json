@@ -1,0 +1,15 @@
+{
+  "deps": [
+    "fuchsia.bluetooth"
+  ],
+  "name": "fuchsia.bluetooth.control",
+  "root": "fidl/fuchsia.bluetooth.control",
+  "sources": [
+    "fidl/fuchsia.bluetooth.control/bonding.fidl",
+    "fidl/fuchsia.bluetooth.control/control.fidl",
+    "fidl/fuchsia.bluetooth.control/pairing_delegate.fidl",
+    "fidl/fuchsia.bluetooth.control/pairing_options.fidl",
+    "fidl/fuchsia.bluetooth.control/remote_device.fidl"
+  ],
+  "type": "fidl_library"
+}

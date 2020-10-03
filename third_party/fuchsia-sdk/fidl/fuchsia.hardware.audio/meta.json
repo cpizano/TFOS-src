@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.hardware.audio",
+  "root": "fidl/fuchsia.hardware.audio",
+  "sources": [
+    "fidl/fuchsia.hardware.audio/audio.fidl",
+    "fidl/fuchsia.hardware.audio/ring_buffer.fidl",
+    "fidl/fuchsia.hardware.audio/stream.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,17 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.ui.views",
+  "root": "fidl/fuchsia.ui.views",
+  "sources": [
+    "fidl/fuchsia.ui.views/commands.fidl",
+    "fidl/fuchsia.ui.views/focuser.fidl",
+    "fidl/fuchsia.ui.views/view.fidl",
+    "fidl/fuchsia.ui.views/view_ref.fidl",
+    "fidl/fuchsia.ui.views/view_ref_focused.fidl",
+    "fidl/fuchsia.ui.views/view_ref_installed.fidl",
+    "fidl/fuchsia.ui.views/view_token.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,29 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "fdio",
+    "fit",
+    "sys_cpp",
+    "vfs_cpp",
+    "zx"
+  ],
+  "fidl_deps": [
+    "fuchsia.io"
+  ],
+  "headers": [
+    "pkg/sys_cpp_testing/include/lib/sys/cpp/testing/component_context_provider.h",
+    "pkg/sys_cpp_testing/include/lib/sys/cpp/testing/fake_component.h",
+    "pkg/sys_cpp_testing/include/lib/sys/cpp/testing/fake_launcher.h",
+    "pkg/sys_cpp_testing/include/lib/sys/cpp/testing/service_directory_provider.h"
+  ],
+  "include_dir": "pkg/sys_cpp_testing/include",
+  "name": "sys_cpp_testing",
+  "root": "pkg/sys_cpp_testing",
+  "sources": [
+    "pkg/sys_cpp_testing/component_context_provider.cc",
+    "pkg/sys_cpp_testing/fake_component.cc",
+    "pkg/sys_cpp_testing/fake_launcher.cc",
+    "pkg/sys_cpp_testing/service_directory_provider.cc"
+  ],
+  "type": "cc_source_library"
+}

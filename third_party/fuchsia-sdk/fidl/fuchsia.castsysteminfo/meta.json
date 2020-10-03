@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.castsysteminfo",
+  "root": "fidl/fuchsia.castsysteminfo",
+  "sources": [
+    "fidl/fuchsia.castsysteminfo/cast_system_info.fidl"
+  ],
+  "type": "fidl_library"
+}

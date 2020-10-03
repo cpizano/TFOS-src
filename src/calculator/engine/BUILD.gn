@@ -1,0 +1,75 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//third_party/fuchsia-sdk/build/component.gni")
+import("//third_party/fuchsia-sdk/build/package.gni")
+
+# All tests.
+group("tests") {
+  testonly = true
+
+  deps = [
+    "//src/calculator/engine/test",
+  ]
+}
+
+# Math library. This source set contains the sources for the implementation of
+# the arithmetic operations.
+static_library("lib") {
+  sources = [
+    "engine.cc",
+    "engine.h",
+  ]
+}
+
+# FIDL driver. This source set contains the implementation of a FIDL service.
+source_set("driver") {
+  sources = [
+    "engine_driver.cc",
+    "engine_driver.h",
+  ]
+
+  deps = [
+    ":lib",
+    "//src/calculator/fidl:fuchsia.examples.calculator",
+  ]
+
+  public_deps = [
+    "//third_party/fuchsia-sdk/pkg/sys_cpp",
+  ]
+}
+
+# The binary that executes when the component is launched.
+executable("engine_bin") {
+  sources = [
+    "main.cc",
+  ]
+
+  deps = [
+    ":driver",
+    "//src/calculator/fidl:fuchsia.examples.calculator",
+    "//third_party/fuchsia-sdk/pkg/async-loop-cpp",
+    "//third_party/fuchsia-sdk/pkg/async-loop-default",
+  ]
+}
+
+# A Fuchsia component. This contains the executable that runs and a manifest
+# that provides metadata about how the component should work.
+fuchsia_component("engine_cmx") {
+  manifest = "meta/engine.cmx"
+
+  data_deps = [
+    ":engine_bin",
+  ]
+}
+
+# The complete Fuchsia package containing all the pieces needed for the engine
+# to run.
+fuchsia_package("engine") {
+  package_name = "calculator_engine"
+
+  deps = [
+    ":engine_cmx",
+  ]
+}

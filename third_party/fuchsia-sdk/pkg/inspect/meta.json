@@ -1,0 +1,41 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "async",
+    "async-default",
+    "fdio",
+    "fit",
+    "zx"
+  ],
+  "fidl_deps": [],
+  "headers": [
+    "pkg/inspect/include/lib/inspect/cpp/inspect.h",
+    "pkg/inspect/include/lib/inspect/cpp/inspector.h",
+    "pkg/inspect/include/lib/inspect/cpp/hierarchy.h",
+    "pkg/inspect/include/lib/inspect/cpp/reader.h",
+    "pkg/inspect/include/lib/inspect/cpp/health.h",
+    "pkg/inspect/include/lib/inspect/cpp/value_list.h",
+    "pkg/inspect/include/lib/inspect/cpp/vmo/state.h",
+    "pkg/inspect/include/lib/inspect/cpp/vmo/types.h",
+    "pkg/inspect/include/lib/inspect/cpp/vmo/block.h",
+    "pkg/inspect/include/lib/inspect/cpp/vmo/heap.h",
+    "pkg/inspect/include/lib/inspect/cpp/vmo/limits.h",
+    "pkg/inspect/include/lib/inspect/cpp/vmo/scanner.h",
+    "pkg/inspect/include/lib/inspect/cpp/vmo/snapshot.h"
+  ],
+  "include_dir": "pkg/inspect/include",
+  "name": "inspect",
+  "root": "pkg/inspect",
+  "sources": [
+    "pkg/inspect/health.cc",
+    "pkg/inspect/hierarchy.cc",
+    "pkg/inspect/inspector.cc",
+    "pkg/inspect/reader.cc",
+    "pkg/inspect/vmo/heap.cc",
+    "pkg/inspect/vmo/scanner.cc",
+    "pkg/inspect/vmo/snapshot.cc",
+    "pkg/inspect/vmo/state.cc",
+    "pkg/inspect/vmo/types.cc"
+  ],
+  "type": "cc_source_library"
+}

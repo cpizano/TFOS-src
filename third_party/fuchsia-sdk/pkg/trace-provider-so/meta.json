@@ -1,0 +1,33 @@
+{
+  "binaries": {
+    "arm64": {
+      "debug": ".build-id/d4/0d334c43614cbe.debug",
+      "dist": "arch/arm64/dist/libtrace-provider-so.so",
+      "dist_path": "lib/libtrace-provider-so.so",
+      "link": "arch/arm64/lib/libtrace-provider-so.so"
+    },
+    "x64": {
+      "debug": ".build-id/b4/e2d2c9a116ae9d.debug",
+      "dist": "arch/x64/dist/libtrace-provider-so.so",
+      "dist_path": "lib/libtrace-provider-so.so",
+      "link": "arch/x64/lib/libtrace-provider-so.so"
+    }
+  },
+  "deps": [
+    "async",
+    "async-default",
+    "fdio",
+    "trace-engine",
+    "zx"
+  ],
+  "format": "shared",
+  "headers": [
+    "pkg/trace-provider-so/include/lib/trace-provider/fdio_connect.h",
+    "pkg/trace-provider-so/include/lib/trace-provider/handler.h",
+    "pkg/trace-provider-so/include/lib/trace-provider/provider.h"
+  ],
+  "include_dir": "pkg/trace-provider-so/include",
+  "name": "trace-provider-so",
+  "root": "pkg/trace-provider-so",
+  "type": "cc_prebuilt_library"
+}

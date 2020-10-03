@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.ui.activity"
+  ],
+  "name": "fuchsia.ui.activity.control",
+  "root": "fidl/fuchsia.ui.activity.control",
+  "sources": [
+    "fidl/fuchsia.ui.activity.control/control.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,26 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "async",
+    "async-cpp",
+    "async-default",
+    "fdio",
+    "zx"
+  ],
+  "fidl_deps": [],
+  "headers": [
+    "pkg/async-testing/include/lib/async-testing/dispatcher_stub.h",
+    "pkg/async-testing/include/lib/async-testing/test_loop.h",
+    "pkg/async-testing/include/lib/async-testing/test_loop_dispatcher.h",
+    "pkg/async-testing/include/lib/async-testing/test_subloop.h"
+  ],
+  "include_dir": "pkg/async-testing/include",
+  "name": "async-testing",
+  "root": "pkg/async-testing",
+  "sources": [
+    "pkg/async-testing/dispatcher_stub.cc",
+    "pkg/async-testing/test_loop.cc",
+    "pkg/async-testing/test_loop_dispatcher.cc"
+  ],
+  "type": "cc_source_library"
+}

@@ -1,0 +1,17 @@
+{
+  "deps": [
+    "fuchsia.bluetooth",
+    "fuchsia.bluetooth.gatt"
+  ],
+  "name": "fuchsia.bluetooth.le",
+  "root": "fidl/fuchsia.bluetooth.le",
+  "sources": [
+    "fidl/fuchsia.bluetooth.le/advertising_data.fidl",
+    "fidl/fuchsia.bluetooth.le/central.fidl",
+    "fidl/fuchsia.bluetooth.le/connection_options.fidl",
+    "fidl/fuchsia.bluetooth.le/peer.fidl",
+    "fidl/fuchsia.bluetooth.le/peripheral.fidl",
+    "fidl/fuchsia.bluetooth.le/types_deprecated.fidl"
+  ],
+  "type": "fidl_library"
+}

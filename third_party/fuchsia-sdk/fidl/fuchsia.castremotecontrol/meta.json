@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.castremotecontrol",
+  "root": "fidl/fuchsia.castremotecontrol",
+  "sources": [
+    "fidl/fuchsia.castremotecontrol/remote_control.fidl"
+  ],
+  "type": "fidl_library"
+}

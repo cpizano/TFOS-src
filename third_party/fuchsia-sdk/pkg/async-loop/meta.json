@@ -1,0 +1,17 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "async"
+  ],
+  "fidl_deps": [],
+  "headers": [
+    "pkg/async-loop/include/lib/async-loop/loop.h"
+  ],
+  "include_dir": "pkg/async-loop/include",
+  "name": "async-loop",
+  "root": "pkg/async-loop",
+  "sources": [
+    "pkg/async-loop/loop.c"
+  ],
+  "type": "cc_source_library"
+}

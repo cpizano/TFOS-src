@@ -1,0 +1,34 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//third_party/fuchsia-sdk/build/component.gni")
+import("//third_party/fuchsia-sdk/build/package.gni")
+
+executable("rot13_client_bin") {
+  sources = [
+    "rot13_client.cc",
+    "rot13_client_app.cc",
+    "rot13_client_app.h",
+  ]
+
+  deps = [
+    "//src/rot13/fidl:fuchsia.examples.rot13",
+    "//third_party/fuchsia-sdk/pkg/async-loop-cpp",
+    "//third_party/fuchsia-sdk/pkg/async-loop-default",
+    "//third_party/fuchsia-sdk/pkg/sys_cpp",
+  ]
+}
+
+fuchsia_component("client") {
+  manifest = "meta/rot13_client.cmx"
+  data_deps = [
+    ":rot13_client_bin",
+  ]
+}
+
+fuchsia_package("rot13_client") {
+  deps = [
+    ":client",
+  ]
+}

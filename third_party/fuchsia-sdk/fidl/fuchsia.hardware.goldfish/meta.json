@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.hardware.goldfish",
+  "root": "fidl/fuchsia.hardware.goldfish",
+  "sources": [
+    "fidl/fuchsia.hardware.goldfish/goldfish_address_space.fidl",
+    "fidl/fuchsia.hardware.goldfish/goldfish_control.fidl",
+    "fidl/fuchsia.hardware.goldfish/goldfish_pipe.fidl"
+  ],
+  "type": "fidl_library"
+}

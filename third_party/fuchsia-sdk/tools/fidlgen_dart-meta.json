@@ -1,0 +1,9 @@
+{
+  "files": [
+    "tools/fidlgen_dart"
+  ],
+  "name": "fidlgen_dart",
+  "root": "tools",
+  "target_files": {},
+  "type": "host_tool"
+}

@@ -1,0 +1,5 @@
+{
+    "program": {
+        "binary": "rot13_server_bin"
+    }
+}

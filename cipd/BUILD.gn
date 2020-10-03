@@ -1,0 +1,84 @@
+# Copyright 2019 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Build targets for constructing CIPD release packages.
+
+assert(is_fuchsia)
+
+import("//build/config/clang/clang.gni")
+import("//third_party/fuchsia-sdk/build/build_id_dir.gni")
+import("//third_party/fuchsia-sdk/build/cipd.gni")
+
+fuchsia_cipd_package("hello_world") {
+  package_definition_name = "hello_world.yaml"
+  package = "sample/fuchsia/hello_world-\${targetarch}"
+  description = "Prebuilt Hello World sample for Fuchsia."
+
+  deps = [ "//src/hello_world:hello_world_package" ]
+
+  sources = [
+    "${root_gen_dir}/src/hello_world/hello_world/hello_world.far",
+    "//LICENSE",
+  ]
+}
+
+fuchsia_cipd_package("rot13") {
+  package_definition_name = "rot13.yaml"
+  package = "sample/fuchsia/rot13-\${targetarch}"
+  description = "Prebuilt Rot13 sample for Fuchsia."
+
+  deps = [
+    "//src/rot13/client:rot13_client",
+    "//src/rot13/server:rot13_server",
+  ]
+
+  sources = [
+    "${root_gen_dir}/src/rot13/client/rot13_client/rot13_client.far",
+    "${root_gen_dir}/src/rot13/server/rot13_server/rot13_server.far",
+    "//LICENSE",
+  ]
+}
+
+#
+# Create a .build-id directory to contain all the unstripped binaries
+# for the Fucshia packages being uploaded to CIPD.
+#
+_build_ids_path = "${root_build_dir}/cipd/.build-id"
+build_id_dir(".build-id") {
+  output_path = _build_ids_path
+
+  # Include symbols from clang as well
+  build_id_dirs = [ "${clang_base_path}/lib/debug/.build-id" ]
+  deps = [
+    "//src/hello_world:hello_world_package",
+    "//src/rot13/client:rot13_client",
+    "//src/rot13/server:rot13_server",
+  ]
+}
+
+#
+# Package all the symbols for all Fuchsia packages into a single
+# CIPD package.
+fuchsia_cipd_package("debug_symbols") {
+  package_definition_name = "debug_symbols.yaml"
+  package_definition_dir = "${target_gen_dir}/${target_name}"
+  package = "sample/fuchsia/debug-symbols-\${targetarch}"
+  description = "Debugging symbols for prebuilt binaries from Fuchsia Samples."
+  package_root = _build_ids_path
+
+  # Include the .build-id directory, which is at the root.
+  directories = [ "." ]
+
+  deps = [ ":.build-id" ]
+
+  sources = [ "//LICENSE" ]
+}
+
+group("cipd") {
+  deps = [
+    ":debug_symbols",
+    ":hello_world",
+    ":rot13",
+  ]
+}

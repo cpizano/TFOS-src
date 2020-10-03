@@ -1,0 +1,21 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "inspect",
+    "inspect_service_cpp",
+    "sys_cpp"
+  ],
+  "fidl_deps": [
+    "fuchsia.inspect"
+  ],
+  "headers": [
+    "pkg/sys_inspect_cpp/include/lib/sys/inspect/cpp/component.h"
+  ],
+  "include_dir": "pkg/sys_inspect_cpp/include",
+  "name": "sys_inspect_cpp",
+  "root": "pkg/sys_inspect_cpp",
+  "sources": [
+    "pkg/sys_inspect_cpp/component.cc"
+  ],
+  "type": "cc_source_library"
+}

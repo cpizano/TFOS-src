@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.bluetooth.a2dp",
+  "root": "fidl/fuchsia.bluetooth.a2dp",
+  "sources": [
+    "fidl/fuchsia.bluetooth.a2dp/audio_mode.fidl"
+  ],
+  "type": "fidl_library"
+}

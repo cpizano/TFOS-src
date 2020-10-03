@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.castwindow",
+  "root": "fidl/fuchsia.castwindow",
+  "sources": [
+    "fidl/fuchsia.castwindow/window.fidl"
+  ],
+  "type": "fidl_library"
+}

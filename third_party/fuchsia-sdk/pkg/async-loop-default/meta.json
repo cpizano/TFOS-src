@@ -1,0 +1,22 @@
+{
+  "binaries": {
+    "arm64": {
+      "link": "arch/arm64/lib/libasync-loop-default.a"
+    },
+    "x64": {
+      "link": "arch/x64/lib/libasync-loop-default.a"
+    }
+  },
+  "deps": [
+    "async-default",
+    "async-loop"
+  ],
+  "format": "static",
+  "headers": [
+    "pkg/async-loop-default/include/lib/async-loop/default.h"
+  ],
+  "include_dir": "pkg/async-loop-default/include",
+  "name": "async-loop-default",
+  "root": "pkg/async-loop-default",
+  "type": "cc_prebuilt_library"
+}

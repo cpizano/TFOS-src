@@ -1,0 +1,9 @@
+{
+  "files": [
+    "tools/fvm"
+  ],
+  "name": "fvm",
+  "root": "tools",
+  "target_files": {},
+  "type": "host_tool"
+}

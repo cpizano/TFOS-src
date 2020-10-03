@@ -1,0 +1,31 @@
+{
+  "binaries": {
+    "arm64": {
+      "debug": ".build-id/b9/7172563d0344fc.debug",
+      "dist": "arch/arm64/dist/libtrace-engine.so",
+      "dist_path": "lib/libtrace-engine.so",
+      "link": "arch/arm64/lib/libtrace-engine.so"
+    },
+    "x64": {
+      "debug": ".build-id/ed/e21d0a507ce46a.debug",
+      "dist": "arch/x64/dist/libtrace-engine.so",
+      "dist_path": "lib/libtrace-engine.so",
+      "link": "arch/x64/lib/libtrace-engine.so"
+    }
+  },
+  "deps": [
+    "async"
+  ],
+  "format": "shared",
+  "headers": [
+    "pkg/trace-engine/include/lib/trace-engine/context.h",
+    "pkg/trace-engine/include/lib/trace-engine/fields.h",
+    "pkg/trace-engine/include/lib/trace-engine/handler.h",
+    "pkg/trace-engine/include/lib/trace-engine/instrumentation.h",
+    "pkg/trace-engine/include/lib/trace-engine/types.h"
+  ],
+  "include_dir": "pkg/trace-engine/include",
+  "name": "trace-engine",
+  "root": "pkg/trace-engine",
+  "type": "cc_prebuilt_library"
+}

@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.hardware.light",
+  "root": "fidl/fuchsia.hardware.light",
+  "sources": [
+    "fidl/fuchsia.hardware.light/light.fidl"
+  ],
+  "type": "fidl_library"
+}

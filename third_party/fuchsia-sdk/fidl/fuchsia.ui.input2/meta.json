@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "fuchsia.ui.views"
+  ],
+  "name": "fuchsia.ui.input2",
+  "root": "fidl/fuchsia.ui.input2",
+  "sources": [
+    "fidl/fuchsia.ui.input2/events.fidl",
+    "fidl/fuchsia.ui.input2/keyboard.fidl",
+    "fidl/fuchsia.ui.input2/keys.fidl",
+    "fidl/fuchsia.ui.input2/layout.fidl",
+    "fidl/fuchsia.ui.input2/modifiers.fidl",
+    "fidl/fuchsia.ui.input2/semantic_keys.fidl"
+  ],
+  "type": "fidl_library"
+}

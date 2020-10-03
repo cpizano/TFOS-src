@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "fuchsia.wlan.common",
+    "fuchsia.wlan.stats"
+  ],
+  "name": "fuchsia.wlan.service",
+  "root": "fidl/fuchsia.wlan.service",
+  "sources": [
+    "fidl/fuchsia.wlan.service/wlan_service.fidl"
+  ],
+  "type": "fidl_library"
+}

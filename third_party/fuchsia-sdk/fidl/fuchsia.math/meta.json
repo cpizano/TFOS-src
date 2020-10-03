@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.math",
+  "root": "fidl/fuchsia.math",
+  "sources": [
+    "fidl/fuchsia.math/math.fidl"
+  ],
+  "type": "fidl_library"
+}

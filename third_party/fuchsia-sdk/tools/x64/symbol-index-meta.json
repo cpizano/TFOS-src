@@ -1,0 +1,9 @@
+{
+  "files": [
+    "tools/x64/symbol-index"
+  ],
+  "name": "symbol-index",
+  "root": "tools",
+  "target_files": {},
+  "type": "host_tool"
+}

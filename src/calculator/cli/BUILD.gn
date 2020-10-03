@@ -1,0 +1,56 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//third_party/fuchsia-sdk/build/component.gni")
+import("//third_party/fuchsia-sdk/build/package.gni")
+
+# A FIDL client that can connect to a Calculator engine.
+source_set("client") {
+  sources = [
+    "client.cc",
+    "client.h",
+  ]
+
+  deps = [
+    "//src/calculator/fidl:fuchsia.examples.calculator",
+    "//third_party/fuchsia-sdk/pkg/async-loop-cpp",
+  ]
+
+  public_deps = [
+    "//third_party/fuchsia-sdk/pkg/sys_cpp",
+  ]
+}
+
+# The binary that executes when the component is launched.
+executable("cli_bin") {
+  sources = [
+    "main.cc",
+  ]
+
+  deps = [
+    ":client",
+    "//src/calculator/fidl:fuchsia.examples.calculator",
+    "//third_party/fuchsia-sdk/pkg/async-loop-cpp",
+    "//third_party/fuchsia-sdk/pkg/async-loop-default",
+  ]
+}
+
+# A Fuchsia component. This contains the executable that runs and a manifest
+# that provides metadata about how the component should work.
+fuchsia_component("cli_cmx") {
+  manifest = "meta/cli.cmx"
+  data_deps = [
+    ":cli_bin",
+  ]
+}
+
+# The complete Fuchsia package containing all the pieces needed for the client
+# to run.
+fuchsia_package("cli") {
+  package_name = "calculator_cli"
+
+  deps = [
+    ":cli_cmx",
+  ]
+}

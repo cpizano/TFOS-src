@@ -1,0 +1,21 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "fidl_cpp",
+    "sys_cpp"
+  ],
+  "fidl_deps": [
+    "fuchsia.modular",
+    "fuchsia.sys"
+  ],
+  "headers": [
+    "pkg/modular_cpp/include/lib/modular/cpp/agent.h"
+  ],
+  "include_dir": "pkg/modular_cpp/include",
+  "name": "modular_cpp",
+  "root": "pkg/modular_cpp",
+  "sources": [
+    "pkg/modular_cpp/agent.cc"
+  ],
+  "type": "cc_source_library"
+}

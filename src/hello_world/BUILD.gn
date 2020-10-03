@@ -1,0 +1,71 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# testing is for host base unit tests using googletest
+import("//build/testing.gni")
+
+# default group
+group("hello_world") {
+  deps = [ ":hello_bin" ]
+  if (is_fuchsia) {
+    public_deps = [
+      ":hello_world_package",
+    ]
+  }
+}
+
+# Tests group
+group("tests") {
+  testonly = true
+  deps = [ ":hello_world_test" ]
+}
+
+# Executable using both a static and shared lib.
+executable("hello_bin") {
+  sources = [ "hello.cc" ]
+  deps = [
+    ":hello_shared",
+    ":hello_static",
+  ]
+}
+
+shared_library("hello_shared") {
+  sources = [
+    "hello_shared.cc",
+    "hello_shared.h",
+  ]
+  defines = [ "HELLO_SHARED_IMPLEMENTATION" ]
+}
+
+static_library("hello_static") {
+  sources = [
+    "hello_static.cc",
+    "hello_static.h",
+  ]
+}
+
+# Host unit test
+test("hello_world_test") {
+  sources = [ "test/hello_test.cc" ]
+  deps = [
+    ":hello_static",
+    "//third_party/googletest:gtest",
+    "//third_party/googletest:gtest_main",
+  ]
+}
+
+if (is_fuchsia) {
+  import("//third_party/fuchsia-sdk/build/component.gni")
+  import("//third_party/fuchsia-sdk/build/package.gni")
+
+  fuchsia_component("hello_world_cmx") {
+    manifest = "hello_world.cmx"
+    data_deps = [ ":hello_bin" ]
+  }
+
+  fuchsia_package("hello_world_package") {
+    package_name = "hello_world"
+    deps = [ ":hello_world_cmx" ]
+  }
+}

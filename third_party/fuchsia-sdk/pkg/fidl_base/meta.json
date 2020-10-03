@@ -1,0 +1,38 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "fit"
+  ],
+  "fidl_deps": [],
+  "headers": [
+    "pkg/fidl_base/include/lib/fidl/coding.h",
+    "pkg/fidl_base/include/lib/fidl/txn_header.h",
+    "pkg/fidl_base/include/lib/fidl/cpp/builder.h",
+    "pkg/fidl_base/include/lib/fidl/cpp/message.h",
+    "pkg/fidl_base/include/lib/fidl/cpp/message_buffer.h",
+    "pkg/fidl_base/include/lib/fidl/cpp/message_builder.h",
+    "pkg/fidl_base/include/lib/fidl/cpp/message_part.h",
+    "pkg/fidl_base/include/lib/fidl/internal.h",
+    "pkg/fidl_base/include/lib/fidl/internal_callable_traits.h",
+    "pkg/fidl_base/include/lib/fidl/trace.h",
+    "pkg/fidl_base/include/lib/fidl/visitor.h",
+    "pkg/fidl_base/include/lib/fidl/walker.h"
+  ],
+  "include_dir": "pkg/fidl_base/include",
+  "name": "fidl_base",
+  "root": "pkg/fidl_base",
+  "sources": [
+    "pkg/fidl_base/builder.cc",
+    "pkg/fidl_base/decoding_and_validating.cc",
+    "pkg/fidl_base/encoding.cc",
+    "pkg/fidl_base/formatting.cc",
+    "pkg/fidl_base/internal.c",
+    "pkg/fidl_base/message.cc",
+    "pkg/fidl_base/message_buffer.cc",
+    "pkg/fidl_base/message_builder.cc",
+    "pkg/fidl_base/txn_header.c",
+    "pkg/fidl_base/validate_string.cc",
+    "pkg/fidl_base/walker.cc"
+  ],
+  "type": "cc_source_library"
+}

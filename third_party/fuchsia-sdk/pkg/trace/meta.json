@@ -1,0 +1,29 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "async",
+    "async-cpp",
+    "fit",
+    "trace-engine",
+    "zx"
+  ],
+  "fidl_deps": [],
+  "headers": [
+    "pkg/trace/include/lib/trace/internal/event_args.h",
+    "pkg/trace/include/lib/trace/internal/event_common.h",
+    "pkg/trace/include/lib/trace/internal/event_internal.h",
+    "pkg/trace/include/lib/trace/internal/pairs_internal.h",
+    "pkg/trace/include/lib/trace/internal/string_traits.h",
+    "pkg/trace/include/lib/trace/event.h",
+    "pkg/trace/include/lib/trace/event_args.h",
+    "pkg/trace/include/lib/trace/observer.h"
+  ],
+  "include_dir": "pkg/trace/include",
+  "name": "trace",
+  "root": "pkg/trace",
+  "sources": [
+    "pkg/trace/event.cc",
+    "pkg/trace/observer.cc"
+  ],
+  "type": "cc_source_library"
+}

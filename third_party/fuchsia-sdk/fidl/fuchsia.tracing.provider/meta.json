@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.tracing.provider",
+  "root": "fidl/fuchsia.tracing.provider",
+  "sources": [
+    "fidl/fuchsia.tracing.provider/provider.fidl"
+  ],
+  "type": "fidl_library"
+}

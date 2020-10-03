@@ -1,0 +1,21 @@
+{
+  "deps": [
+    "fuchsia.math",
+    "fuchsia.mem",
+    "fuchsia.sys",
+    "zx"
+  ],
+  "name": "fuchsia.feedback",
+  "root": "fidl/fuchsia.feedback",
+  "sources": [
+    "fidl/fuchsia.feedback/annotation.fidl",
+    "fidl/fuchsia.feedback/attachment.fidl",
+    "fidl/fuchsia.feedback/crash_register.fidl",
+    "fidl/fuchsia.feedback/crash_reporter.fidl",
+    "fidl/fuchsia.feedback/data_provider.fidl",
+    "fidl/fuchsia.feedback/data_register.fidl",
+    "fidl/fuchsia.feedback/device_id_provider.fidl",
+    "fidl/fuchsia.feedback/last_reboot_info.fidl"
+  ],
+  "type": "fidl_library"
+}

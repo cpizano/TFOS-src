@@ -1,0 +1,7 @@
+{
+  "docs": [
+    "docs/modular/modular_config_schema.json"
+  ],
+  "name": "modular_config_schema",
+  "type": "documentation"
+}

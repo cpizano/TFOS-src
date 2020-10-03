@@ -1,0 +1,15 @@
+{
+  "deps": [
+    "fuchsia.io",
+    "fuchsia.mem",
+    "fuchsia.sys",
+    "fuchsia.ui.policy"
+  ],
+  "name": "fuchsia.modular.session",
+  "root": "fidl/fuchsia.modular.session",
+  "sources": [
+    "fidl/fuchsia.modular.session/launcher.fidl",
+    "fidl/fuchsia.modular.session/modular_config.fidl"
+  ],
+  "type": "fidl_library"
+}

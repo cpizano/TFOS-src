@@ -1,0 +1,17 @@
+{
+  "deps": [
+    "fuchsia.media",
+    "fuchsia.media.audio",
+    "fuchsia.url",
+    "zx"
+  ],
+  "name": "fuchsia.media.sessions2",
+  "root": "fidl/fuchsia.media.sessions2",
+  "sources": [
+    "fidl/fuchsia.media.sessions2/discovery.fidl",
+    "fidl/fuchsia.media.sessions2/images.fidl",
+    "fidl/fuchsia.media.sessions2/player.fidl",
+    "fidl/fuchsia.media.sessions2/publisher.fidl"
+  ],
+  "type": "fidl_library"
+}

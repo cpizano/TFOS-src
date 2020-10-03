@@ -1,0 +1,22 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+assert(is_fuchsia)
+
+import("//third_party/fuchsia-sdk/build/fidl_library.gni")
+
+# This group makes all FIDL targets available as public dependencies.
+# This group is named the same # as its GN package so that the group
+# name can be elided in most usages.
+group("fidl") {
+  public_deps = [
+    ":fuchsia.examples.calculator",
+  ]
+}
+
+fidl_library("fuchsia.examples.calculator") {
+  sources = [
+    "calculator.fidl",
+  ]
+}

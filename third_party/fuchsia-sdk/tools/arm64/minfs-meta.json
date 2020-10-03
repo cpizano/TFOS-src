@@ -1,0 +1,9 @@
+{
+  "files": [
+    "tools/arm64/minfs"
+  ],
+  "name": "minfs",
+  "root": "tools",
+  "target_files": {},
+  "type": "host_tool"
+}

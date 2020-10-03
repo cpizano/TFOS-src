@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.wlan.stats",
+  "root": "fidl/fuchsia.wlan.stats",
+  "sources": [
+    "fidl/fuchsia.wlan.stats/wlan_stats.fidl"
+  ],
+  "type": "fidl_library"
+}

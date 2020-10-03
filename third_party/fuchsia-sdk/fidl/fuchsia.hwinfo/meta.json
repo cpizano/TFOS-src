@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.intl"
+  ],
+  "name": "fuchsia.hwinfo",
+  "root": "fidl/fuchsia.hwinfo",
+  "sources": [
+    "fidl/fuchsia.hwinfo/hwinfo.fidl"
+  ],
+  "type": "fidl_library"
+}

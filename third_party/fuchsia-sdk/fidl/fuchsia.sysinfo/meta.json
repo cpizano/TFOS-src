@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.sysinfo",
+  "root": "fidl/fuchsia.sysinfo",
+  "sources": [
+    "fidl/fuchsia.sysinfo/sysinfo.fidl"
+  ],
+  "type": "fidl_library"
+}

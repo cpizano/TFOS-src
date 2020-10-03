@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.mem",
+  "root": "fidl/fuchsia.mem",
+  "sources": [
+    "fidl/fuchsia.mem/buffer.fidl",
+    "fidl/fuchsia.mem/range.fidl"
+  ],
+  "type": "fidl_library"
+}

@@ -1,0 +1,29 @@
+{
+  "binaries": {
+    "arm64": {
+      "debug": ".build-id/00/65885517a2ef9e.debug",
+      "dist": "arch/arm64/dist/libsyslog.so",
+      "dist_path": "lib/libsyslog.so",
+      "link": "arch/arm64/lib/libsyslog.so"
+    },
+    "x64": {
+      "debug": ".build-id/d6/a78a540f123fde.debug",
+      "dist": "arch/x64/dist/libsyslog.so",
+      "dist_path": "lib/libsyslog.so",
+      "link": "arch/x64/lib/libsyslog.so"
+    }
+  },
+  "deps": [
+    "fdio"
+  ],
+  "format": "shared",
+  "headers": [
+    "pkg/syslog/include/lib/syslog/global.h",
+    "pkg/syslog/include/lib/syslog/logger.h",
+    "pkg/syslog/include/lib/syslog/wire_format.h"
+  ],
+  "include_dir": "pkg/syslog/include",
+  "name": "syslog",
+  "root": "pkg/syslog",
+  "type": "cc_prebuilt_library"
+}

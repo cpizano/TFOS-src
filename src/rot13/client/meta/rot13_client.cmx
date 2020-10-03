@@ -1,0 +1,9 @@
+{
+   "program": {
+       "binary": "rot13_client_bin"
+   },
+      "sandbox": {
+          "services": [ "fuchsia.sys.Launcher",
+                        "fuchsia.examples.rot13.Rot13" ]
+      }
+}

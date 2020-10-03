@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.io"
+  ],
+  "name": "fuchsia.migration",
+  "root": "fidl/fuchsia.migration",
+  "sources": [
+    "fidl/fuchsia.migration/migration.fidl"
+  ],
+  "type": "fidl_library"
+}

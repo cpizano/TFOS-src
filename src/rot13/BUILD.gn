@@ -1,0 +1,17 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+group("rot13") {
+  public_deps = [
+    "//src/rot13/client:rot13_client",
+    "//src/rot13/server:rot13_server",
+  ]
+}
+
+group("tests") {
+  testonly = true
+  deps = [
+    "//src/rot13/server:host_tests",
+  ]
+}

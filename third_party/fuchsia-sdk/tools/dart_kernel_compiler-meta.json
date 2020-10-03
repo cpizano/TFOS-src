@@ -1,0 +1,13 @@
+{
+  "files": [
+    "tools/dart",
+    "tools/dart_prebuilts/dart_runner/platform_strong.dill",
+    "tools/dart_prebuilts/flutter_runner/platform_strong.dill",
+    "tools/dart_prebuilts/kernel_compiler.snapshot",
+    "tools/dart_prebuilts/frontend_server_tool.snapshot"
+  ],
+  "name": "dart_kernel_compiler",
+  "root": "tools",
+  "target_files": {},
+  "type": "host_tool"
+}

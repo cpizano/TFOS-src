@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "zx"
+  ],
+  "name": "fuchsia.ui.activity",
+  "root": "fidl/fuchsia.ui.activity",
+  "sources": [
+    "fidl/fuchsia.ui.activity/activity.fidl",
+    "fidl/fuchsia.ui.activity/provider.fidl",
+    "fidl/fuchsia.ui.activity/state.fidl",
+    "fidl/fuchsia.ui.activity/tracker.fidl"
+  ],
+  "type": "fidl_library"
+}

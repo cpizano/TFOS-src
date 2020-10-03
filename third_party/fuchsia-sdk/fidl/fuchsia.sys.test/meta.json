@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.sys.test",
+  "root": "fidl/fuchsia.sys.test",
+  "sources": [
+    "fidl/fuchsia.sys.test/cache.fidl"
+  ],
+  "type": "fidl_library"
+}

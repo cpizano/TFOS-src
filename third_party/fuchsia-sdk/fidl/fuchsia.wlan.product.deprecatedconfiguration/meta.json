@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.net"
+  ],
+  "name": "fuchsia.wlan.product.deprecatedconfiguration",
+  "root": "fidl/fuchsia.wlan.product.deprecatedconfiguration",
+  "sources": [
+    "fidl/fuchsia.wlan.product.deprecatedconfiguration/wlan_deprecated_configuration.fidl"
+  ],
+  "type": "fidl_library"
+}

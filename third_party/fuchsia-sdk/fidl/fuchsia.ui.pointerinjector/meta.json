@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "fuchsia.ui.views",
+    "zx"
+  ],
+  "name": "fuchsia.ui.pointerinjector",
+  "root": "fidl/fuchsia.ui.pointerinjector",
+  "sources": [
+    "fidl/fuchsia.ui.pointerinjector/config.fidl",
+    "fidl/fuchsia.ui.pointerinjector/device.fidl",
+    "fidl/fuchsia.ui.pointerinjector/event.fidl"
+  ],
+  "type": "fidl_library"
+}

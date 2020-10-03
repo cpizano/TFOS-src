@@ -1,0 +1,90 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//build/testing.gni")
+import("//third_party/fuchsia-sdk/build/component.gni")
+import("//third_party/fuchsia-sdk/build/package.gni")
+
+group("host_tests") {
+  # Tests run on the host. These are unit tests that are platform independent.
+  testonly = true
+  deps = [
+    ":rot13_unittests",
+  ]
+}
+
+# Keep the app in a lib component so it can be reused by tests
+source_set("impl_lib") {
+  sources = [
+    "rot13.cc",
+    "rot13.h",
+  ]
+}
+
+source_set("server_lib") {
+  sources = [
+    "rot13_server_app.cc",
+    "rot13_server_app.h",
+  ]
+
+  public_deps = [
+    "//src/rot13/fidl:fuchsia.examples.rot13",
+    "//third_party/fuchsia-sdk/pkg/sys_cpp",
+  ]
+  deps = [
+    ":impl_lib",
+  ]
+}
+
+# Testing rules
+test("rot13_unittests") {
+  sources = [
+    "rot13_unittests.cc",
+  ]
+  deps = [
+    ":impl_lib",
+    "//third_party/googletest:gtest",
+    "//third_party/googletest:gtest_main",
+  ]
+}
+
+if (defined(test_package)) {
+  test_package("rot13_server_tests") {
+    deps = [
+      ":rot13_server_unittests",
+    ]
+
+    tests = [
+      {
+        name = "rot13_server_unittests"
+        environments = basic_envs
+      },
+    ]
+  }
+}
+
+# Server targets
+executable("rot13_server_bin") {
+  sources = [
+    "rot13_server.cc",
+  ]
+
+  deps = [
+    ":server_lib",
+    "//third_party/fuchsia-sdk/pkg/async-loop-cpp",
+    "//third_party/fuchsia-sdk/pkg/async-loop-default",
+  ]
+}
+
+fuchsia_component("server") {
+  manifest = "meta/rot13_server.cmx"
+  data_deps = [
+    ":rot13_server_bin",
+  ]
+}
+fuchsia_package("rot13_server") {
+  deps = [
+    ":server",
+  ]
+}

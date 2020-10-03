@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.mem"
+  ],
+  "name": "fuchsia.inspect",
+  "root": "fidl/fuchsia.inspect",
+  "sources": [
+    "fidl/fuchsia.inspect/tree.fidl"
+  ],
+  "type": "fidl_library"
+}

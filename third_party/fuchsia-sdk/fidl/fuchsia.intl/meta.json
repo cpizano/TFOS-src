@@ -1,0 +1,10 @@
+{
+  "deps": [],
+  "name": "fuchsia.intl",
+  "root": "fidl/fuchsia.intl",
+  "sources": [
+    "fidl/fuchsia.intl/intl.fidl",
+    "fidl/fuchsia.intl/property_provider.fidl"
+  ],
+  "type": "fidl_library"
+}

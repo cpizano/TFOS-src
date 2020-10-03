@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.auth.oldtokens",
+  "root": "fidl/fuchsia.auth.oldtokens",
+  "sources": [
+    "fidl/fuchsia.auth.oldtokens/credentials_producer.fidl"
+  ],
+  "type": "fidl_library"
+}

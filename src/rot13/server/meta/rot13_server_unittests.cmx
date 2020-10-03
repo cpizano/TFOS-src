@@ -1,0 +1,5 @@
+{
+    "program": {
+        "binary": "test/rot13_server_unittests"
+    }
+}

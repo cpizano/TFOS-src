@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "fuchsia.io",
+    "fuchsia.ldsvc"
+  ],
+  "name": "fuchsia.process",
+  "root": "fidl/fuchsia.process",
+  "sources": [
+    "fidl/fuchsia.process/launcher.fidl",
+    "fidl/fuchsia.process/resolver.fidl"
+  ],
+  "type": "fidl_library"
+}

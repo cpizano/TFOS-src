@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.update",
+  "root": "fidl/fuchsia.update",
+  "sources": [
+    "fidl/fuchsia.update/update.fidl"
+  ],
+  "type": "fidl_library"
+}

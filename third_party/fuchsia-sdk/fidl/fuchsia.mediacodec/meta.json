@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.media"
+  ],
+  "name": "fuchsia.mediacodec",
+  "root": "fidl/fuchsia.mediacodec",
+  "sources": [
+    "fidl/fuchsia.mediacodec/codec_factory.fidl"
+  ],
+  "type": "fidl_library"
+}

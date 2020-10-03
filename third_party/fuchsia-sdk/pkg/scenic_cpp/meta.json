@@ -1,0 +1,37 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "fidl_cpp",
+    "fit",
+    "images_cpp",
+    "syslog",
+    "zx"
+  ],
+  "fidl_deps": [
+    "fuchsia.images",
+    "fuchsia.ui.gfx",
+    "fuchsia.ui.scenic",
+    "fuchsia.ui.views"
+  ],
+  "headers": [
+    "pkg/scenic_cpp/include/lib/ui/scenic/cpp/commands.h",
+    "pkg/scenic_cpp/include/lib/ui/scenic/cpp/commands_sizing.h",
+    "pkg/scenic_cpp/include/lib/ui/scenic/cpp/id.h",
+    "pkg/scenic_cpp/include/lib/ui/scenic/cpp/resources.h",
+    "pkg/scenic_cpp/include/lib/ui/scenic/cpp/session.h",
+    "pkg/scenic_cpp/include/lib/ui/scenic/cpp/view_ref_pair.h",
+    "pkg/scenic_cpp/include/lib/ui/scenic/cpp/view_token_pair.h"
+  ],
+  "include_dir": "pkg/scenic_cpp/include",
+  "name": "scenic_cpp",
+  "root": "pkg/scenic_cpp",
+  "sources": [
+    "pkg/scenic_cpp/commands.cc",
+    "pkg/scenic_cpp/commands_sizing.cc",
+    "pkg/scenic_cpp/resources.cc",
+    "pkg/scenic_cpp/session.cc",
+    "pkg/scenic_cpp/view_ref_pair.cc",
+    "pkg/scenic_cpp/view_token_pair.cc"
+  ],
+  "type": "cc_source_library"
+}

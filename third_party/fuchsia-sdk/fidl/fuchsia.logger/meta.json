@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "zx",
+    "fuchsia.diagnostics"
+  ],
+  "name": "fuchsia.logger",
+  "root": "fidl/fuchsia.logger",
+  "sources": [
+    "fidl/fuchsia.logger/logger.fidl"
+  ],
+  "type": "fidl_library"
+}

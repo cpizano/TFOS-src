@@ -1,0 +1,36 @@
+{
+  "deps": [
+    "fuchsia.mem",
+    "fuchsia.sys",
+    "fuchsia.ui.policy",
+    "fuchsia.ui.views",
+    "zx"
+  ],
+  "name": "fuchsia.modular",
+  "root": "fidl/fuchsia.modular",
+  "sources": [
+    "fidl/fuchsia.modular/agent.fidl",
+    "fidl/fuchsia.modular/agent_controller.fidl",
+    "fidl/fuchsia.modular/annotation.fidl",
+    "fidl/fuchsia.modular/component_context.fidl",
+    "fidl/fuchsia.modular/intent.fidl",
+    "fidl/fuchsia.modular/lifecycle.fidl",
+    "fidl/fuchsia.modular/module_context.fidl",
+    "fidl/fuchsia.modular/module_data.fidl",
+    "fidl/fuchsia.modular/module_manifest.fidl",
+    "fidl/fuchsia.modular/module_state.fidl",
+    "fidl/fuchsia.modular/puppet_master.fidl",
+    "fidl/fuchsia.modular/session_restart_controller.fidl",
+    "fidl/fuchsia.modular/session_shell.fidl",
+    "fidl/fuchsia.modular/story_command.fidl",
+    "fidl/fuchsia.modular/story_controller.fidl",
+    "fidl/fuchsia.modular/story_info.fidl",
+    "fidl/fuchsia.modular/story_options.fidl",
+    "fidl/fuchsia.modular/story_provider.fidl",
+    "fidl/fuchsia.modular/story_shell.fidl",
+    "fidl/fuchsia.modular/story_shell_factory.fidl",
+    "fidl/fuchsia.modular/story_state.fidl",
+    "fidl/fuchsia.modular/surface.fidl"
+  ],
+  "type": "fidl_library"
+}

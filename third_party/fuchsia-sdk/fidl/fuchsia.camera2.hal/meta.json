@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "fuchsia.camera2",
+    "fuchsia.sysmem"
+  ],
+  "name": "fuchsia.camera2.hal",
+  "root": "fidl/fuchsia.camera2.hal",
+  "sources": [
+    "fidl/fuchsia.camera2.hal/hal.fidl"
+  ],
+  "type": "fidl_library"
+}

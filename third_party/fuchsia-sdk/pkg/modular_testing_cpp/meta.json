@@ -1,0 +1,30 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "async-loop-cpp",
+    "async-loop-default",
+    "fit",
+    "modular_cpp",
+    "sys_cpp"
+  ],
+  "fidl_deps": [
+    "fuchsia.modular",
+    "fuchsia.modular.testing"
+  ],
+  "headers": [
+    "pkg/modular_testing_cpp/include/lib/modular/testing/cpp/fake_agent.h",
+    "pkg/modular_testing_cpp/include/lib/modular/testing/cpp/fake_component.h",
+    "pkg/modular_testing_cpp/include/lib/modular/testing/cpp/test_harness_builder.h",
+    "pkg/modular_testing_cpp/include/lib/modular/testing/cpp/test_harness_launcher.h"
+  ],
+  "include_dir": "pkg/modular_testing_cpp/include",
+  "name": "modular_testing_cpp",
+  "root": "pkg/modular_testing_cpp",
+  "sources": [
+    "pkg/modular_testing_cpp/fake_agent.cc",
+    "pkg/modular_testing_cpp/fake_component.cc",
+    "pkg/modular_testing_cpp/test_harness_builder.cc",
+    "pkg/modular_testing_cpp/test_harness_launcher.cc"
+  ],
+  "type": "cc_source_library"
+}

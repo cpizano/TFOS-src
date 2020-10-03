@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.accessibility.gesture",
+  "root": "fidl/fuchsia.accessibility.gesture",
+  "sources": [
+    "fidl/fuchsia.accessibility.gesture/gesture_listener.fidl"
+  ],
+  "type": "fidl_library"
+}

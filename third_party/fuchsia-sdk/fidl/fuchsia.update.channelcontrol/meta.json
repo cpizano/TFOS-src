@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "fuchsia.update.channel"
+  ],
+  "name": "fuchsia.update.channelcontrol",
+  "root": "fidl/fuchsia.update.channelcontrol",
+  "sources": [
+    "fidl/fuchsia.update.channelcontrol/channelcontrol.fidl"
+  ],
+  "type": "fidl_library"
+}

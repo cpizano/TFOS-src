@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.url",
+  "root": "fidl/fuchsia.url",
+  "sources": [
+    "fidl/fuchsia.url/url.fidl"
+  ],
+  "type": "fidl_library"
+}

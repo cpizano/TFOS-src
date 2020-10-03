@@ -1,0 +1,9 @@
+{
+  "deps": [],
+  "name": "fuchsia.location.namedplace",
+  "root": "fidl/fuchsia.location.namedplace",
+  "sources": [
+    "fidl/fuchsia.location.namedplace/namedplace.fidl"
+  ],
+  "type": "fidl_library"
+}

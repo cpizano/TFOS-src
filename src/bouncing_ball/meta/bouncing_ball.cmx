@@ -1,0 +1,11 @@
+{
+    "program": {
+        "binary": "bouncing_ball_bin"
+    },
+    "sandbox": {
+        "services": [
+            "fuchsia.sys.Environment",
+            "fuchsia.ui.scenic.Scenic"
+        ]
+    }
+}

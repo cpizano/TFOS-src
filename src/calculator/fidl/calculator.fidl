@@ -1,0 +1,48 @@
+// Copyright 2019 The Fuchsia Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+/// Library describing a calculator protocol. Such a protocol allows a calculator UI and its
+/// mathematical operations to be independent.
+///
+/// This library only operates on and returns 64-bit floating point numbers. All operations
+/// are performed in floating point and may lose precision.
+library fuchsia.examples.calculator;
+
+/// An operation that generates a result for a single input value.
+enum UnaryOp {
+    NEGATION = 0;
+};
+
+/// An operation that generates a result for two input values.
+enum BinaryOp {
+    ADDITION = 0;
+    SUBTRACTION = 1;
+    MULTIPLICATION = 2;
+    DIVISION = 3;
+};
+
+/// The result of a failed operation.
+struct Error {
+    string:200? message;
+};
+
+// [START union]
+/// The result of an operation. A result is either a single number or an
+/// [Error] value.
+union Result {
+    1: float64 number;
+    2: reserved;
+    3: Error error;
+};
+// [END union]
+
+/// A calculator that can perform mathematical operations.
+[Discoverable]
+protocol Calculator {
+    /// Performs the requested operation on a single value and returns the result.
+    DoUnaryOp(UnaryOp operation, float64 a) -> (Result result);
+
+    /// Performs the requested operation on two values and returns the result.
+    DoBinaryOp(BinaryOp operation, float64 a, float64 b) -> (Result result);
+};

@@ -1,0 +1,22 @@
+{
+  "banjo_deps": [],
+  "deps": [
+    "async-cpp",
+    "inspect"
+  ],
+  "fidl_deps": [
+    "fuchsia.inspect"
+  ],
+  "headers": [
+    "pkg/inspect_service_cpp/include/lib/inspect/service/cpp/reader.h",
+    "pkg/inspect_service_cpp/include/lib/inspect/service/cpp/service.h"
+  ],
+  "include_dir": "pkg/inspect_service_cpp/include",
+  "name": "inspect_service_cpp",
+  "root": "pkg/inspect_service_cpp",
+  "sources": [
+    "pkg/inspect_service_cpp/reader.cc",
+    "pkg/inspect_service_cpp/service.cc"
+  ],
+  "type": "cc_source_library"
+}

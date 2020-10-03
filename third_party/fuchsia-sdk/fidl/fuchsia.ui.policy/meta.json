@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "fuchsia.ui.input",
+    "fuchsia.ui.views"
+  ],
+  "name": "fuchsia.ui.policy",
+  "root": "fidl/fuchsia.ui.policy",
+  "sources": [
+    "fidl/fuchsia.ui.policy/device_listener.fidl",
+    "fidl/fuchsia.ui.policy/display_backlight.fidl",
+    "fidl/fuchsia.ui.policy/display_usage.fidl",
+    "fidl/fuchsia.ui.policy/presentation.fidl",
+    "fidl/fuchsia.ui.policy/presenter.fidl"
+  ],
+  "type": "fidl_library"
+}
