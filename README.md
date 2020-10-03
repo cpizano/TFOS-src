@@ -1,8 +1,8 @@
-# Fuchsia Samples
-A collection of samples demonstrating how to build, run, and test Fuchsia components outside the Fuchsia source code tree.
+# TFOS
 
-| These samples might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. |
-|-------|
+Source code for the TFOS online book.
+
+Based on https://fuchsia.googlesource.com/samples
 
 ## Setup
 1. Install required dependencies for building:
@@ -15,11 +15,9 @@ A collection of samples demonstrating how to build, run, and test Fuchsia compon
 
 1. Clone this repo and submodules:
     ```
-    git clone https://fuchsia.googlesource.com/samples --recursive --depth 1
+    git https://github.com/cpizano/TFOS-src.git --depth 1
     ```
 
-   If you have already cloned this repo without the `--recursive` flag you can run `git submodule init && git submodule update --recursive` to download the submodules.
-   The git history is quite large, and you can download only the newest commit with `--depth 1`. Remove this flag if you want the entire history.
 1. Change directory to the root of the repo and setup and run the tests:
 
     ```
