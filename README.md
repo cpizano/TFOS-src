@@ -1,6 +1,6 @@
 # TFOS
 
-Source code for the TFOS online book.
+Source code for the TFOS online book. Currently only Linux host is supported.
 
 Based on https://fuchsia.googlesource.com/samples
 
@@ -15,13 +15,13 @@ Based on https://fuchsia.googlesource.com/samples
 
 1. Clone this repo and submodules:
     ```
-    git https://github.com/cpizano/TFOS-src.git --depth 1
+    git clone https://github.com/cpizano/TFOS-src.git --depth 1
     ```
 
 1. Change directory to the root of the repo and setup and run the tests:
 
     ```
-    cd samples
+    cd TFOS-src
     ./scripts/setup-and-test.sh
     ```
     This script downloads all required dependencies (this may take 5-30min), builds the samples, and runs the tests. If the script completes without errors all tests have passed.
@@ -30,9 +30,6 @@ Based on https://fuchsia.googlesource.com/samples
 
 ### Supported host platforms and build systems
 The C++ samples in this repo only support Linux hosts and the [GN build system](https://gn.googlesource.com/gn/).
-
-### Getting started
-To get started see the [SDK documentation](https://fuchsia.dev/fuchsia-src/development/sdk).
 
 ### Samples
 #### hello_world
